@@ -60,4 +60,17 @@ public class Almacen {
 
     return p;
 }
+    public void mostrarEstado() {
+    System.out.println(" INFORME ACTUAL DEL ALMACEN");
+
+    for (String categoria : almacen.keySet()) {
+        Stack<Producto> pila = almacen.get(categoria);
+
+        System.out.println("Categoria: " + categoria);
+        System.out.println("Contenido: " + pila);
+        System.out.println("Cantidad: " + pila.size());
+        System.out.println("Capacidad max: " + capacidadMax.get(categoria));
+    }
+}
+    
 }
