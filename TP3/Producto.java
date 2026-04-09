@@ -5,9 +5,10 @@ public class Producto {
     private String nombreProducto;
     private String categoria;
 
-    public Producto(String producto, String IDproducto) {
-        this.nombreProducto = producto;
+    public Producto(String IDproducto, String nombreProducto, String categoria) {
         this.IDproducto = IDproducto;
+        this.nombreProducto = nombreProducto;
+        this.categoria = categoria;
     }
 
     public Producto() {
@@ -35,5 +36,10 @@ public class Producto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return "Codigo: " + this.IDproducto + "\n" + "Categoria: " + this.categoria;
     }
 }
