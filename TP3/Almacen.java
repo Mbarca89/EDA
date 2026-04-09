@@ -45,5 +45,19 @@ public class Almacen {
         }
 
 
+
     }
+    public Producto despacharProducto(String categoria) {
+    Stack<Producto> pila = almacen.get(categoria);
+
+    if (pila == null || pila.isEmpty()) {
+        System.out.println("No hay productos en " + categoria);
+        return null;
+    }
+
+    Producto p = pila.pop();
+    System.out.println("Producto despachado: " + p);
+
+    return p;
+}
 }
