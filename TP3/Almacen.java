@@ -73,4 +73,40 @@ public class Almacen {
     }
 }
     
+    public Producto buscarProducto (String categoria, String id){
+        Stack<Producto> pila = almacen.get(categoria);
+        
+        if(pila==null || pila.isEmpty()){
+            System.out.println("No hay productos en "+categoria);
+            return null;
+        }
+        
+        Stack<Producto> auxiliar = new Stack<>();
+        Producto encontrado =null;
+        
+        while(!pila.isEmpty()){
+            Producto p = pila.pop();
+            
+            if(p.getIDproducto().equals(id)){
+                encontrado = p;
+            }
+            auxiliar.push(p);
+        }
+        
+        
+        //corregir original
+        while(!auxiliar.isEmpty()){
+            pila.push(auxiliar.pop());
+        }
+        
+        if(encontrado !=null){
+            System.out.println("Producto encontrado: "+ encontrado);
+        } else{
+            System.out.println("Producto no encontrado.");
+        }
+        
+        
+        return encontrado;
+    }
+    
 }
