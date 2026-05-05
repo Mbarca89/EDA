@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.edaparcial1kamiljofre;
+package TP4;
 
 /**
  *
@@ -82,4 +82,24 @@ public class Ejercicio1Kamil {
         }
         System.out.println("Valor no encontrado.");
     }
+
+    public static void main(String[] args) {
+        ArbolBinario arbol = new ArbolBinario(10);
+
+        arbol.insertar(10);
+        arbol.insertar(5);
+        arbol.insertar(15);
+        arbol.insertar(3);
+        arbol.insertar(7);
+        arbol.insertar(20);
+        arbol.insertar(14);
+        arbol.insertar(22);
+
+        System.out.println("Recorrido InOrden:");
+        arbol.inOrden();
+
+        System.out.println("\nBuscar 7: " + arbol.buscar(7));
+        System.out.println("Buscar 20: " + arbol.buscar(20));
+    }
+
 }
