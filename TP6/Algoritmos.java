@@ -6,9 +6,12 @@ import java.util.Random;
 public class Algoritmos {
     private Integer[] lista;
     
+    
+    //Crear arreglo
     public Algoritmos(int tamaño) {
         lista = new Integer[tamaño];
         
+        //Arreglo dado en TP6
         if(tamaño==8){
             lista[0]=1;
             lista[1]=7;
@@ -19,6 +22,7 @@ public class Algoritmos {
             lista[6]=5;
             lista[7]=13;
         } else{
+            //Para testear con mas entrada, por lo que sea
             Random random = new Random();
             for(int i=0; i<tamaño; i++){
                 lista[i] = random.nextInt(101);
@@ -203,7 +207,7 @@ public class Algoritmos {
     } 
     
     
-    
+    //Inicio QuickSort
     public void quickSort(Integer[] lista){
         Integer[] listaQuick = lista.clone();
         
@@ -258,4 +262,5 @@ public class Algoritmos {
             q_sort(listaQuick,pivot+1,der);
         }
     }
+    //Fin QuickSort
 }
