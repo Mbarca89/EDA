@@ -1,0 +1,54 @@
+1) 
+    a]
+	i.Para ordenar un ArrayList en Java, debes usar clases contenedoras 
+	(wrapper) como Integer o Double, ya que los tipos primitivos (int, double)
+	no se pueden almacenar directamente en una colección.
+
+	ii.Java utiliza el algoritmo TimSort para ordenar un ArrayList de objetos 
+	cuando se usa Collections.sort() o ArrayList.sort().
+
+	iii.En Java, los métodos principales para buscar elementos en un ArrayList
+	son contains() (para saber si el elemento existe) e indexOf() (para 
+	conocer su posición).
+
+	iv.Si el HashMap de Java encuentra colisiones en un mismo bucket, utiliza
+	una combinación de encadenamiento separado (recorrido secuencial mediante
+	nodos) y árboles balanceados (desde el JDK 8 en adelante para casos de 
+	alta colisión).
+
+	v.No, el método .contains() en Java nunca utiliza búsqueda binaria. Por 
+	defecto, está diseñado para ser de uso general en colecciones que pueden 
+	estar desordenadas, por lo que siempre realiza una búsqueda lineal con 
+	una complejidad de (O(n). Internamente, llama al método .indexOf() y 
+	recorre elemento por elemento comparándolos con el objeto buscado.
+
+	vi.Los métodos tradicionales de ordenamiento (como Quicksort o Mergesort)
+	no son aplicables en redes porque requieren tener todos los elementos 
+	disponibles de antemano y comparar sus valores (a < b) para organizarlos.
+	En internet, el flujo es continuo, infinito y los paquetes viajan por rutas
+	distintas. El protocolo TCP utiliza una estrategia orientada a la 
+	reconstrucción basada en números de secuencia y almacenamiento en 
+	búfer:
+
+	-  Numeración secuencial: Cada segmento de datos lleva un encabezado 
+	con un número de secuencia.
+
+	-  Recepción y almacenamiento en búfer: Al llegar fuera de orden, TCP no 
+	los descarta ni los procesa de inmediato. Los almacena temporalmente en 
+	la memoria o búfer del receptor y espera los paquetes faltantes.
+
+	-  Reensamblaje y confirmación: Una vez completada la secuencia, TCP 
+	reordena los datos y entrega el flujo continuo a la capa de aplicación.
+
+	-  Control de pérdidas: Si un número de secuencia se salta (por ejemplo, 	
+	llega el 1, el 2 y luego el 4), TCP envía confirmaciones duplicadas (ACKs) 
+	para solicitar al emisor el reenvío del paquete 3.
+
+
+  b]
+
+	i. Algoritmo a mano usando
+	1 7 9 4 11 3 5 13
+
+	ii.Para medir el tiempo se usara
+	System.nanotime()
