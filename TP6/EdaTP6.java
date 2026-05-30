@@ -5,7 +5,7 @@ public class EdaTP6 {
 
     public static void main(String[] args) {
         
-        Algoritmos lista = new Algoritmos(10);
+        Algoritmos lista = new Algoritmos(8);
         lista.mostrarLista();
         lista.bubbleSort(lista.getLista());
         lista.insertionSort(lista.getLista());

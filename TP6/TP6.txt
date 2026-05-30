@@ -53,17 +53,25 @@
 	ii.Para medir el tiempo se usara
 	System.nanotime()
 
-c] El promt que generamos  para pedirle a la IA fue: "Necesito un algoritmo en Java que ordene un arreglo de números enteros utilizando QuickSort. 
-Quiero que me muestres el código completo, comentado y explicado paso a paso para poder entender 
-cómo funciona cada parte del programa."
+c] El promt que generamos  para pedirle a la IA fue: "Necesito un algoritmo en 
+Java que ordene un arreglo de números enteros utilizando QuickSort. 
+Quiero que me muestres el código completo, comentado y explicado paso a paso 
+para poder entender cómo funciona cada parte del programa."
 
-e]El algoritmo toma el primer elemento del arreglo como pivote. Luego compara los demás valores para colocarlos a la izquierda si son menores o a la derecha si son mayores.
- Cuando el pivote queda ubicado en su posición correcta, el algoritmo repite el proceso con las dos partes generadas. 
+e]El algoritmo toma el primer elemento del arreglo como pivote. Luego compara 
+los demás valores para colocarlos a la izquierda si son menores o a la derecha 
+si son mayores.
+ Cuando el pivote queda ubicado en su posición correcta, el algoritmo repite el 
+proceso con las dos partes generadas. 
 Esto continúa hasta que todos los elementos quedan ordenados.
 
-f] " El QuickSort es más rápido que Bubble Sort e Insertion Sort cuando hay muchos datos para ordenar, porque va separando el arreglo en partes más chicas y las ordena por separado.
- Igual, si el pivote que elige no es bueno, puede tardar más y perder rendimiento."
+f] " El QuickSort es más rápido que Bubble Sort e Insertion Sort cuando hay 
+muchos datos para ordenar, porque va separando el arreglo en partes más chicas 
+y las ordena por separado. Igual, si el pivote que elige no es bueno, puede 
+tardar más y perder rendimiento."
 
-g]QuickSort responde a la estrategia de Divide y Vencerás, porque lo que hace es agarrar el arreglo, dividirlo en partes más chicas usando un pivote y después ordenar cada parte por separado.
- Va repitiendo ese proceso hasta que todos los números quedan ordenados.
+g]QuickSort responde a la estrategia de Divide y Vencerás, porque lo que hace 
+es agarrar el arreglo, dividirlo en partes más chicas usando un pivote y después 
+ordenar cada parte por separado. Va repitiendo ese proceso hasta que todos los 
+números quedan ordenados.
 	
