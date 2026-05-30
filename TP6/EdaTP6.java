@@ -16,3 +16,4 @@ public class EdaTP6 {
         lista.busquedaBinaria(lista.getLista(), 30);
     }
 }
+    
