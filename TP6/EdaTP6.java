@@ -13,5 +13,6 @@ public class EdaTP6 {
         //aca va busqueda binaria
         lista.countSort(lista.getLista());
         lista.quickSort(lista.getLista());
+        lista.busquedaBinaria(lista.getLista(), 30);
     }
 }
