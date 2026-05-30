@@ -165,9 +165,43 @@ public class Algoritmos {
     //Fin MergreSort
     
 
-    public void busquedaBinaria(){
-        
+   public void busquedaBinaria(Integer[] lista, int valorBuscado){
+    Integer[] listaOrdenada = lista.clone();
+
+    q_sort(listaOrdenada, 0, listaOrdenada.length - 1);
+
+    System.out.print("Arreglo ordenado: ");
+    for(Integer num : listaOrdenada){
+        System.out.print(num + " ");
     }
+    System.out.println();
+
+    int izquierda = 0;
+    int derecha = listaOrdenada.length - 1;
+
+    long inicio = System.nanoTime();
+
+    while(izquierda <= derecha){
+        int medio = (izquierda + derecha) / 2;
+
+        if(listaOrdenada[medio] == valorBuscado){
+            long fin = System.nanoTime();
+            System.out.println("Elemento encontrado en la posicion " + medio);
+            System.out.println("Tiempo: " + (fin - inicio) + " nano.sg");
+            return;
+        }
+
+        if(listaOrdenada[medio] < valorBuscado){
+            izquierda = medio + 1;
+        }else{
+            derecha = medio - 1;
+        }
+    }
+
+    long fin = System.nanoTime();
+    System.out.println("Elemento no encontrado");
+    System.out.println("Tiempo: " + (fin - inicio) + " nano.sg");
+} 
     public void countSort(Integer[] lista){
         Integer[] listaCount = lista.clone();
         
