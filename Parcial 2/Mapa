@@ -1,0 +1,48 @@
+Animales
+├── Vertebrados
+│   ├── Mamíferos
+│   │   ├── Perro
+│   │   ├── Gato
+│   │   └── Ballena
+│   ├── Aves
+│   │   ├── Águila
+│   │   ├── Pingüino
+│   │   └── Loro
+│   ├── Reptiles
+│   │   ├── Serpiente
+│   │   ├── Tortuga
+│   │   └── Cocodrilo
+│   ├── Anfibios
+│   │   ├── Rana
+│   │   ├── Sapo
+│   │   └── Salamandra
+│   └── Peces
+│       ├── Tiburón
+│       ├── Atún
+│       └── Pez Payaso
+│
+└── Invertebrados
+    ├── Artrópodos
+    │   ├── Insectos
+    │   │   ├── Abeja
+    │   │   ├── Hormiga
+    │   │   └── Mariposa
+    │   ├── Arácnidos
+    │   │   ├── Araña
+    │   │   └── Escorpión
+    │   └── Crustáceos
+    │       ├── Cangrejo
+    │       └── Langosta
+    │
+    ├── Moluscos
+    │   ├── Caracol
+    │   ├── Pulpo
+    │   └── Calamar
+    │
+    ├── Equinodermos
+    │   ├── Estrella de mar
+    │   └── Erizo de mar
+    │
+    └── Anélidos
+        ├── Lombriz
+        └── Sanguijuela
