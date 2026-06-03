@@ -65,7 +65,7 @@ public class Preguntas extends javax.swing.JInternalFrame {
                 btnnoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 120, 50));
+        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 120, 50));
 
         btnsi.setBackground(new java.awt.Color(139, 195, 74));
         btnsi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -74,7 +74,7 @@ public class Preguntas extends javax.swing.JInternalFrame {
         btnsi.setText("SI");
         btnsi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 120, 50));
+        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 120, 50));
 
         txtpregunta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtpregunta.setForeground(new java.awt.Color(255, 255, 255));
