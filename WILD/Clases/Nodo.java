@@ -1,15 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package Clases;
 
+/**
+ *
+ * @author kamil
+ */
 public class Nodo {
-    /*
-    Cada nodo del arbol contiene una pregunta con respuesta SI o NO(boolean)
-    Cada hoja del arbol contiene un animal que son los que
-     */
     
     private String consulta;
     private Nodo si;
@@ -44,5 +43,4 @@ public class Nodo {
     public void setNo(Nodo no) {
         this.no = no;
     }
-    
 }
