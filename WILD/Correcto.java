@@ -94,6 +94,11 @@ public class Correcto extends javax.swing.JFrame {
         btnsi.setText("OTRA ");
         btnsi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnsi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsiActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 150, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/correcto.png"))); // NOI18N
@@ -164,10 +169,11 @@ public class Correcto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnnoActionPerformed
 
-    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsiActionPerformed
         new Preguntas(adivinador).setVisible(true);
         dispose();
-    }
+    }//GEN-LAST:event_btnsiActionPerformed
+
 
     private void cargarImagenAnimal(String animal) {
         URL recurso = buscarImagenAnimal(animal);
