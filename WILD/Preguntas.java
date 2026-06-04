@@ -81,7 +81,7 @@ public class Preguntas extends javax.swing.JFrame {
                 btnnoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 120, 50));
+        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 130, 60));
 
         btnsi.setBackground(new java.awt.Color(139, 195, 74));
         btnsi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -95,7 +95,7 @@ public class Preguntas extends javax.swing.JFrame {
                 btnsiActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 120, 50));
+        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 140, 60));
 
         txtpregunta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtpregunta.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,9 +139,11 @@ public class Preguntas extends javax.swing.JFrame {
         responder(false);
     }//GEN-LAST:event_btnnoActionPerformed
 
-    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {
-        responder(true);
-    }
+    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsiActionPerformed
+      responder(true);
+    }//GEN-LAST:event_btnsiActionPerformed
+
+  
 
     private void responder(boolean respuestaSi) {
         if (actual == null) {

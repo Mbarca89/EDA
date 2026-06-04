@@ -47,7 +47,7 @@ public class JUGAR extends javax.swing.JFrame {
         btncomenzar.setBackground(new java.awt.Color(139, 195, 74));
         btncomenzar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btncomenzar.setForeground(new java.awt.Color(255, 255, 255));
-        btncomenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Pata (2).png"))); // NOI18N
+        btncomenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/comenzar (2).png"))); // NOI18N
         btncomenzar.setText("COMENZAR");
         btncomenzar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btncomenzar.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +55,7 @@ public class JUGAR extends javax.swing.JFrame {
                 btncomenzarActionPerformed(evt);
             }
         });
-        jPanel1.add(btncomenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 180, 70));
+        jPanel1.add(btncomenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 210, 70));
 
         btnsalir.setBackground(new java.awt.Color(46, 94, 62));
         btnsalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -68,7 +68,7 @@ public class JUGAR extends javax.swing.JFrame {
                 btnsalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 180, 70));
+        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 210, 70));
 
         txtlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Logo (1).png"))); // NOI18N
         jPanel1.add(txtlogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -10, -1, -1));
@@ -91,9 +91,11 @@ public class JUGAR extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
 
-    private void btncomenzarActionPerformed(java.awt.event.ActionEvent evt) {
-        iniciarJuego();
-    }
+    private void btncomenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncomenzarActionPerformed
+  iniciarJuego();
+    }//GEN-LAST:event_btncomenzarActionPerformed
+
+
 
     private void iniciarJuego() {
         new Preguntas(adivinador).setVisible(true);

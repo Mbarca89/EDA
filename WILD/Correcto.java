@@ -31,8 +31,7 @@ public class Correcto extends javax.swing.JFrame {
         initComponents();
         txtrespuesta.setText(animal);
         cargarImagenAnimal(animal);
-        btnsi.setText("OTRA");
-        btnno.setText("MENU");
+     
         setLocationRelativeTo(null);
     }
 
@@ -51,9 +50,9 @@ public class Correcto extends javax.swing.JFrame {
         btnno = new javax.swing.JButton();
         btnsi = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtrespuesta = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblrespuesta = new javax.swing.JLabel();
+        txtrespuesta = new javax.swing.JLabel();
         txtfondo = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,7 +68,7 @@ public class Correcto extends javax.swing.JFrame {
                 btnsalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 650, 300, 60));
+        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 650, 330, 60));
 
         txtlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Logo (1).png"))); // NOI18N
         jPanel1.add(txtlogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -20, -1, 270));
@@ -77,8 +76,8 @@ public class Correcto extends javax.swing.JFrame {
         btnno.setBackground(new java.awt.Color(217, 83, 79));
         btnno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnno.setForeground(new java.awt.Color(255, 255, 255));
-        btnno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/No.png"))); // NOI18N
-        btnno.setText("NO");
+        btnno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/otra (3).png"))); // NOI18N
+        btnno.setText("MENU");
         btnno.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnno.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnno.addActionListener(new java.awt.event.ActionListener() {
@@ -86,53 +85,51 @@ public class Correcto extends javax.swing.JFrame {
                 btnnoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 590, 120, 50));
+        jPanel1.add(btnno, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 150, 80));
 
         btnsi.setBackground(new java.awt.Color(139, 195, 74));
         btnsi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnsi.setForeground(new java.awt.Color(255, 255, 255));
-        btnsi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/SI.png"))); // NOI18N
-        btnsi.setText("SI");
+        btnsi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/otra (2).png"))); // NOI18N
+        btnsi.setText("OTRA ");
         btnsi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnsi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsiActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, 120, 50));
+        jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 150, 80));
 
-//        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Leon.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/correcto.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
-
-        txtrespuesta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtrespuesta.setForeground(new java.awt.Color(255, 255, 255));
-        txtrespuesta.setText("RESPUESTA ");
-        jPanel1.add(txtrespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(27, 102, 51));
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-//        lblrespuesta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/mosca.jpg"))); // NOI18N
+        lblrespuesta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/mosca.jpg"))); // NOI18N
+
+        txtrespuesta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtrespuesta.setForeground(new java.awt.Color(255, 255, 255));
+        txtrespuesta.setText("RESPUESTA ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblrespuesta)
-                .addContainerGap())
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtrespuesta)
+                    .addComponent(lblrespuesta))
+                .addGap(27, 27, 27))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblrespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtrespuesta)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 180, 170));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 230, 210));
 
         txtfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Fondo.png"))); // NOI18N
         txtfondo.setAutoscrolls(true);
