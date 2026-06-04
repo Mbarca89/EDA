@@ -4,17 +4,33 @@
  */
 package WILD;
 
+import WILD.Clases.Arbol;
+import WILD.Clases.Nodo;
+import WILD.Main.Parcial2;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Nicolino Uchiha
  */
-public class Preguntas extends javax.swing.JInternalFrame {
+public class Preguntas extends javax.swing.JFrame {
+
+    private final Arbol adivinador;
+    private Nodo actual;
 
     /**
      * Creates new form Preguntas
      */
     public Preguntas() {
+        this(Parcial2.crearAdivinador());
+    }
+
+    public Preguntas(Arbol adivinador) {
+        this.adivinador = adivinador;
+        this.actual = adivinador.getRaiz();
         initComponents();
+        setLocationRelativeTo(null);
+        actualizarPregunta();
     }
 
     /**
@@ -74,6 +90,11 @@ public class Preguntas extends javax.swing.JInternalFrame {
         btnsi.setText("SI");
         btnsi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnsi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsiActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 120, 50));
 
         txtpregunta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -111,12 +132,99 @@ public class Preguntas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnsalirActionPerformed
 
     private void btnnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnoActionPerformed
-        // TODO add your handling code here:
+        responder(false);
     }//GEN-LAST:event_btnnoActionPerformed
+
+    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {
+        responder(true);
+    }
+
+    private void responder(boolean respuestaSi) {
+        if (actual == null) {
+            return;
+        }
+
+        if (adivinador.esHoja(actual)) {
+            if (respuestaSi) {
+                new Correcto(actual.getConsulta(), adivinador).setVisible(true);
+                dispose();
+            } else {
+                aprender();
+            }
+            return;
+        }
+
+        actual = adivinador.responder(actual, respuestaSi);
+        if (actual == null) {
+            JOptionPane.showMessageDialog(this, "No tengo una respuesta cargada para ese camino.");
+            dispose();
+            return;
+        }
+
+        actualizarPregunta();
+    }
+
+    private void actualizarPregunta() {
+        if (actual == null) {
+            txtpregunta.setText("No hay preguntas cargadas.");
+            return;
+        }
+
+        String texto;
+        if (adivinador.esHoja(actual)) {
+            texto = "Tu animal es " + actual.getConsulta() + "?";
+        } else {
+            texto = actual.getConsulta();
+        }
+
+        txtpregunta.setText("<html><body style='width: 260px'>" + texto + "</body></html>");
+    }
+
+    private void aprender() {
+        String animalNuevo = JOptionPane.showInputDialog(this, "Que animal estabas pensando?");
+        if (animalNuevo == null || animalNuevo.trim().isEmpty()) {
+            return;
+        }
+
+        String preguntaNueva = JOptionPane.showInputDialog(
+                this,
+                "Escribi una pregunta que diferencie a " + animalNuevo + " de " + actual.getConsulta()
+        );
+        if (preguntaNueva == null || preguntaNueva.trim().isEmpty()) {
+            return;
+        }
+
+        int respuesta = JOptionPane.showConfirmDialog(
+                this,
+                "Para " + animalNuevo + ", la respuesta a esa pregunta es SI?",
+                "Aprendizaje",
+                JOptionPane.YES_NO_OPTION
+        );
+        if (respuesta == JOptionPane.CLOSED_OPTION) {
+            return;
+        }
+
+        adivinador.aprender(actual, animalNuevo.trim(), preguntaNueva.trim(), respuesta == JOptionPane.YES_OPTION);
+        JOptionPane.showMessageDialog(this, "Listo, aprendi un animal nuevo.");
+
+        int jugarOtraVez = JOptionPane.showConfirmDialog(
+                this,
+                "Queres jugar otra vez?",
+                "Adivinador de animales",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (jugarOtraVez == JOptionPane.YES_OPTION) {
+            actual = adivinador.getRaiz();
+            actualizarPregunta();
+        } else {
+            dispose();
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

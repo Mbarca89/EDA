@@ -4,17 +4,36 @@
  */
 package WILD;
 
+import WILD.Clases.Arbol;
+import WILD.Main.Parcial2;
+import java.awt.Image;
+import java.net.URL;
+import java.text.Normalizer;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Nicolino Uchiha
  */
-public class Correcto extends javax.swing.JInternalFrame {
+public class Correcto extends javax.swing.JFrame {
+
+    private final Arbol adivinador;
 
     /**
      * Creates new form Preguntas
      */
     public Correcto() {
+        this("RESPUESTA", Parcial2.crearAdivinador());
+    }
+
+    public Correcto(String animal, Arbol adivinador) {
+        this.adivinador = adivinador;
         initComponents();
+        txtrespuesta.setText(animal);
+        cargarImagenAnimal(animal);
+        btnsi.setText("OTRA");
+        btnno.setText("MENU");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -76,9 +95,14 @@ public class Correcto extends javax.swing.JInternalFrame {
         btnsi.setText("SI");
         btnsi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnsi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsiActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, 120, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Leon (3).png"))); // NOI18N
+//        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Leon.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
         txtrespuesta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -89,7 +113,7 @@ public class Correcto extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(27, 102, 51));
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        lblrespuesta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/mosca.jpg"))); // NOI18N
+//        lblrespuesta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/mosca.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -135,12 +159,60 @@ public class Correcto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
 
     private void btnnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnoActionPerformed
-        // TODO add your handling code here:
+        new JUGAR().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnnoActionPerformed
+
+    private void btnsiActionPerformed(java.awt.event.ActionEvent evt) {
+        new Preguntas(adivinador).setVisible(true);
+        dispose();
+    }
+
+    private void cargarImagenAnimal(String animal) {
+        URL recurso = buscarImagenAnimal(animal);
+        if (recurso == null) {
+            recurso = getClass().getResource("/WILD/ASSETS/Animal.png");
+        }
+
+        if (recurso == null) {
+            lblrespuesta.setIcon(null);
+            return;
+        }
+
+        ImageIcon icono = new ImageIcon(recurso);
+        Image imagen = icono.getImage().getScaledInstance(170, 156, Image.SCALE_SMOOTH);
+        lblrespuesta.setIcon(new ImageIcon(imagen));
+    }
+
+    private URL buscarImagenAnimal(String animal) {
+        String[] nombres = {
+            animal.trim(),
+            animal.toLowerCase().trim(),
+            normalizarNombreArchivo(animal)
+        };
+        String[] extensiones = {".jpg", ".png"};
+
+        for (String nombre : nombres) {
+            for (String extension : extensiones) {
+                URL recurso = getClass().getResource("/WILD/ASSETS/" + nombre + extension);
+                if (recurso != null) {
+                    return recurso;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private String normalizarNombreArchivo(String texto) {
+        String normalizado = Normalizer.normalize(texto, Normalizer.Form.NFD);
+        normalizado = normalizado.replaceAll("\\p{M}", "");
+        return normalizado.toLowerCase().trim();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

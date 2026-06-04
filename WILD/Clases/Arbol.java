@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Clases;
+package WILD.Clases;
 
 /**
  *
@@ -16,24 +16,53 @@ public class Arbol {
         this.raiz=null;
     }
     
-    public void insertar(String consulta){
-        raiz = insertarRecursivo(raiz, consulta);
+    public Arbol(Nodo raiz) {
+        this.raiz = raiz;
     }
     
-    private Nodo insertarRecursivo(Nodo actual, String consulta){
-        if(actual == null){
-            return new Nodo(consulta);
+    public Nodo getRaiz() {
+        return raiz;
+    }
+    
+    public void setRaiz(Nodo raiz) {
+        this.raiz = raiz;
+    }
+    
+    public boolean estaVacio() {
+        return raiz == null;
+    }
+    
+    public boolean esHoja(Nodo nodo) {
+        return nodo != null && nodo.getSi() == null && nodo.getNo() == null;
+    }
+    
+    public Nodo responder(Nodo actual, boolean respuestaSi) {
+        if (actual == null) {
+            return null;
         }
         
-        int comparacion = consulta.compareTo(actual.getConsulta());
-        
-        if(comparacion < 0){
-            actual.setSi(insertarRecursivo(actual.getSi(), consulta));
-        } else if(comparacion > 0){
-            actual.setNo(insertarRecursivo(actual.getNo(), consulta));
+        if (respuestaSi) {
+            return actual.getSi();
         }
         
-        return actual;
+        return actual.getNo();
+    }
+    
+    public void aprender(Nodo hoja, String animalNuevo, String preguntaNueva, boolean respuestaSiParaNuevo) {
+        if (hoja == null || !esHoja(hoja)) {
+            return;
+        }
+        
+        String animalAnterior = hoja.getConsulta();
+        hoja.setConsulta(preguntaNueva);
+        
+        if (respuestaSiParaNuevo) {
+            hoja.setSi(new Nodo(animalNuevo));
+            hoja.setNo(new Nodo(animalAnterior));
+        } else {
+            hoja.setSi(new Nodo(animalAnterior));
+            hoja.setNo(new Nodo(animalNuevo));
+        }
     }
     
     public void mostrarPreorden(Nodo raiz){
@@ -41,8 +70,8 @@ public class Arbol {
             return;
         }
         System.out.println(raiz.getConsulta()+" ");
-        System.out.println(raiz.getSi()+ " ");
-        System.out.println(raiz.getNo()+" ");
+        mostrarPreorden(raiz.getSi());
+        mostrarPreorden(raiz.getNo());
     }
     
 }

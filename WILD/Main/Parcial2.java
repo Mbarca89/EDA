@@ -2,16 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package Main;
+package WILD.Main;
 
-import Clases.*;
+import WILD.Clases.Arbol;
+import WILD.Clases.Nodo;
 /**
  *
  * @author kamil
  */
 public class Parcial2 {
 
-    public static void main(String[] args) {
+    public static Arbol crearAdivinador() {
         Arbol adivinador = new Arbol();
         
         Nodo raiz = new Nodo("Tu animal es vertebrado?");
@@ -221,6 +222,14 @@ public class Parcial2 {
                             
                                 sangre.setSi(new Nodo("Garrapata"));
                                 sangre.setNo(new Nodo("Hormiga"));
+                                
+        adivinador.setRaiz(raiz);
+        return adivinador;
                  
+    }
+    
+    public static void main(String[] args) {
+        Arbol adivinador = crearAdivinador();
+        adivinador.mostrarPreorden(adivinador.getRaiz());
     }
 }

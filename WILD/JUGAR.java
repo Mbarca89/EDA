@@ -4,16 +4,22 @@
  */
 package WILD;
 
+import WILD.Clases.Arbol;
+import WILD.Main.Parcial2;
+
 /**
  *
  * @author Nicolino Uchiha
  */
 public class JUGAR extends javax.swing.JFrame {
 
+    private final Arbol adivinador;
+
     /**
      * Creates new form JUGAR
      */
     public JUGAR() {
+        adivinador = Parcial2.crearAdivinador();
         initComponents();
     }
 
@@ -44,6 +50,11 @@ public class JUGAR extends javax.swing.JFrame {
         btncomenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WILD/ASSETS/Pata (2).png"))); // NOI18N
         btncomenzar.setText("COMENZAR");
         btncomenzar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btncomenzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncomenzarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btncomenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 180, 70));
 
         btnsalir.setBackground(new java.awt.Color(46, 94, 62));
@@ -77,8 +88,17 @@ public class JUGAR extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void btncomenzarActionPerformed(java.awt.event.ActionEvent evt) {
+        iniciarJuego();
+    }
+
+    private void iniciarJuego() {
+        new Preguntas(adivinador).setVisible(true);
+        dispose();
+    }
 
     /**
      * @param args the command line arguments
